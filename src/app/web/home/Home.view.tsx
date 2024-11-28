@@ -16,7 +16,7 @@ const iconsMap: Record<string, IconType> = {
     FaPhone: FaPhone
 };
 
-const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, tooltipPosition, handleOnMouseEnterEmployeeCard, handleOnMouseLeaveEmployeeCard }) => (
+const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, benefits, tooltipPosition, handleOnMouseEnterEmployeeCard, handleOnMouseLeaveEmployeeCard }) => (
     <Fragment>
         {/* Hero */}
         <main className="page-container">
@@ -106,34 +106,20 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, tooltipP
                             ))}
                         </Swiper>
                     </div>
-                    <div className="flex flex-col gap-4 mt-5 lg:hidden">
-                        <div className="flex flex-wrap gap-4">
-                            <div className="flex items-center gap-2">
-                                <div className="px-1 py-1 rounded-md bg-[#E8ECFF]">
-                                    <FaCheck className="text-[#2C599B]" />
-                                </div>
-                                <p className="text-sm" style={{ fontWeight: 600 }}>한국어 능력</p>
+                    {benefits && (
+                        <div className="flex flex-col gap-4 mt-5 lg:hidden animate__animated animate__fadeIn duration-500">
+                            <div className="flex flex-wrap gap-4">
+                                {benefits.map((benefit) => (
+                                    <div className="flex items-center gap-2" key={benefit.id}>
+                                        <div className="px-1 py-1 rounded-md bg-[#E8ECFF]">
+                                            <FaCheck className="text-[#2C599B]" />
+                                        </div>
+                                        <p className="text-sm" style={{ fontWeight: 600 }}>{benefit.title}</p>
+                                    </div>
+                                ))}
                             </div>
-                            <div className="flex items-center gap-2">
-                                <div className="px-1 py-1 rounded-md bg-[#E8ECFF]">
-                                    <FaCheck className="text-[#2C599B]" />
-                                </div>
-                                <p className="text-sm" style={{ fontWeight: 600 }}>업무 수행 능력</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="px-1 py-1 rounded-md bg-[#E8ECFF]">
-                                    <FaCheck className="text-[#2C599B]" />
-                                </div>
-                                <p className="text-sm" style={{ fontWeight: 600 }}>겸업 여부</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="px-1 py-1 rounded-md bg-[#E8ECFF]">
-                                    <FaCheck className="text-[#2C599B]" />
-                                </div>
-                                <p className="text-sm" style={{ fontWeight: 600 }}>평판 조회</p>
-                            </div>
-                        </div>
-                    </div>
+                        </div>          
+                    )}
                     <p className="text-sm text-[#FBFF23] underline mt-4 lg:text-white lg:text-lg" style={{ fontWeight: 600 }}>개발자가 필요하신가요?</p>
                     {achievements && (
                         <div className="hidden mt-6 items-center gap-4 lg:flex animate__animated animate__fadeIn duration-500">
