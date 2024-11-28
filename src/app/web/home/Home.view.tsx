@@ -1,11 +1,19 @@
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import { FC, Fragment, memo } from "react";
-import { FaCheck, FaComputer } from "react-icons/fa6";
+import { FaCheck, FaComputer, FaImage, FaPhone } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, FreeMode, Navigation } from 'swiper/modules';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
+import { HomeViewProps } from "./Home.type";
+import { IconType } from "react-icons";
 
-const HomeView: FC = () => (
+const iconsMap: Record<string, IconType> = {
+    FaComputer: FaComputer,
+    FaImage: FaImage,
+    FaPhone: FaPhone
+};
+
+const HomeView: FC<HomeViewProps> = ({ fields }) => (
     <Fragment>
         {/* Navbar */}
         <Navbar />
@@ -362,124 +370,26 @@ const HomeView: FC = () => (
                     </Swiper>
                 </div>
             </div>
+            {/* Fields Swiper */}
             <div className="hidden lg:block lg:mt-6">
                 <Swiper
                     slidesPerView={6}
                     spaceBetween={30}
                     modules={[]}
                 >
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }}>
-                        <div className="px-4 py-2 flex items-center gap-4">
-                            <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                <FaComputer className="text-lg" />
-                            </div>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>해외 마케팅</p>
-                        </div>
-                    </SwiperSlide>
+                    {fields && fields.map((field) => {
+                        const IconComponent = iconsMap[field.icon];
+                        return (
+                            <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }} key={field.id}>
+                                <div className="px-3 py-2 flex items-center gap-4">
+                                    <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
+                                    {IconComponent ? <IconComponent className="text-lg" /> : null}
+                                    </div>
+                                    <p className="text-sm" style={{ fontWeight: 500 }}>{field.title}</p>
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })}
                 </Swiper>
             </div>
         </main>
