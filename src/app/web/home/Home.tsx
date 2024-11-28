@@ -11,15 +11,15 @@ const Home: FC = () => {
     const [employeesData, setEmployeesData] = useState<Employee[] | null>(null);
     const [tooltipPosition, setTooltipPosition] = useState<{ top: number; left: number } | null>(null);
 
-    const handleOnMouseEnter = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const handleOnMouseEnterEmployeeCard = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         const rect = event.currentTarget.getBoundingClientRect();
         setTooltipPosition({
-            top: rect.top + window.scrollY - 10, // Pastikan tooltip berada di atas
+            top: rect.top + window.scrollY - 10,
             left: rect.left + rect.width / 2,
         });
     }, []);
 
-    const handleOnMouseLeave = useCallback(() => {
+    const handleOnMouseLeaveEmployeeCard = useCallback(() => {
         setTooltipPosition(null);
     }, []);
 
@@ -46,8 +46,8 @@ const Home: FC = () => {
         fields={fieldsData}
         employees={employeesData}
         tooltipPosition={tooltipPosition}
-        handleOnMouseEnter={handleOnMouseEnter}
-        handleOnMouseLeave={handleOnMouseLeave}
+        handleOnMouseEnterEmployeeCard={handleOnMouseEnterEmployeeCard}
+        handleOnMouseLeaveEmployeeCard={handleOnMouseLeaveEmployeeCard}
     />;
 };
 

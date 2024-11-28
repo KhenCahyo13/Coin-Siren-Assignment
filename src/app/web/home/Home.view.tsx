@@ -16,7 +16,7 @@ const iconsMap: Record<string, IconType> = {
     FaPhone: FaPhone
 };
 
-const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handleOnMouseEnter, handleOnMouseLeave }) => (
+const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handleOnMouseEnterEmployeeCard, handleOnMouseLeaveEmployeeCard }) => (
     <Fragment>
         {/* Hero */}
         <main className="page-container">
@@ -53,8 +53,8 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                                 <SwiperSlide
                                     key={employee.id}
                                     className="relative group"
-                                    onMouseEnter={handleOnMouseEnter}
-                                    onMouseLeave={handleOnMouseLeave}
+                                    onMouseEnter={handleOnMouseEnterEmployeeCard}
+                                    onMouseLeave={handleOnMouseLeaveEmployeeCard}
                                 >
                                     <Card
                                         height={21}
@@ -166,8 +166,8 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                             <SwiperSlide
                                 key={employee.id}
                                 className="relative group"
-                                onMouseEnter={handleOnMouseEnter}
-                                onMouseLeave={handleOnMouseLeave}
+                                onMouseEnter={handleOnMouseEnterEmployeeCard}
+                                onMouseLeave={handleOnMouseLeaveEmployeeCard}
                             >
                                 <Card
                                     height={20}
