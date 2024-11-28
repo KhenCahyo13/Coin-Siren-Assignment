@@ -1,5 +1,5 @@
 export interface Field {
-    id: string;
+    id: number;
     title: string;
     icon: string;
 }

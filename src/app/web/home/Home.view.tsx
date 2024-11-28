@@ -13,7 +13,7 @@ const iconsMap: Record<string, IconType> = {
     FaPhone: FaPhone
 };
 
-const HomeView: FC<HomeViewProps> = ({ fields }) => (
+const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
     <Fragment>
         {/* Navbar */}
         <Navbar />
@@ -48,134 +48,33 @@ const HomeView: FC<HomeViewProps> = ({ fields }) => (
                             navigation={true}
                             modules={[EffectCoverflow, Navigation]}
                         >
-                            <SwiperSlide className="rounded-lg bg-white">
-                                <div className="px-4 py-4 flex flex-col items-center justify-between h-[21rem]">
-                                    <div className="flex flex-col items-center gap-4">
-                                        <div className="relative w-fit">
-                                            <div className="w-24 h-24 rounded-full overflow-hidden">
-                                                <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
+                            {employees && employees.map((employee) => (
+                                <SwiperSlide className="rounded-lg bg-white" key={employee.id}>
+                                    <div className="px-4 py-4 flex flex-col items-center justify-between h-[21rem]">
+                                        <div className="flex flex-col items-center gap-4">
+                                            <div className="relative w-fit">
+                                                <div className="w-24 h-24 rounded-full overflow-hidden">
+                                                    <img src={employee.profileImage} alt="Profile Image" />
+                                                </div>
+                                                <div className="w-8 h-8 absolute bottom-0 right-0">
+                                                    <img src={employee.countryFlag} alt="Flag" className="rounded-sm" />
+                                                </div>
                                             </div>
-                                            <div className="w-8 h-8 absolute bottom-0 right-0">
-                                                <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col items-center">
-                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-wrap items-center justify-center gap-2">
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className="rounded-lg bg-white">
-                                <div className="px-4 py-4 flex flex-col items-center justify-between h-[21rem]">
-                                    <div className="flex flex-col items-center gap-4">
-                                        <div className="relative w-fit">
-                                            <div className="w-24 h-24 rounded-full overflow-hidden">
-                                                <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
-                                            </div>
-                                            <div className="w-8 h-8 absolute bottom-0 right-0">
-                                                <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
+                                            <div className="flex flex-col items-center">
+                                                <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
+                                                <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col items-center">
-                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
+                                        <div className="flex flex-wrap items-center justify-center gap-2">
+                                            {employee.skills.map((skill) => (
+                                                <div className="px-4 py-2 border border-gray-400 rounded-md" key={skill.id}>
+                                                    <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>{skill.name}</p>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
-                                    <div className="flex flex-wrap items-center justify-center gap-2">
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className="rounded-lg bg-white">
-                                <div className="px-4 py-4 flex flex-col items-center justify-between h-[21rem]">
-                                    <div className="flex flex-col items-center gap-4">
-                                        <div className="relative w-fit">
-                                            <div className="w-24 h-24 rounded-full overflow-hidden">
-                                                <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
-                                            </div>
-                                            <div className="w-8 h-8 absolute bottom-0 right-0">
-                                                <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col items-center">
-                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-wrap items-center justify-center gap-2">
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide className="rounded-lg bg-white">
-                                <div className="px-4 py-4 flex flex-col items-center justify-between h-[21rem]">
-                                    <div className="flex flex-col items-center gap-4">
-                                        <div className="relative w-fit">
-                                            <div className="w-24 h-24 rounded-full overflow-hidden">
-                                                <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
-                                            </div>
-                                            <div className="w-8 h-8 absolute bottom-0 right-0">
-                                                <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col items-center">
-                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-wrap items-center justify-center gap-2">
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                        </div>
-                                        <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                            <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                     </div>
                     <div className="flex flex-col gap-4 mt-5 lg:hidden">
@@ -224,6 +123,7 @@ const HomeView: FC<HomeViewProps> = ({ fields }) => (
                 </div>
                 {/* Right Content */}
                 <div className="hidden lg:block">
+                    {/* Employee Swiper Card Desktop */}
                     <Swiper
                         effect={'coverflow'}
                         grabCursor={true}
@@ -239,134 +139,33 @@ const HomeView: FC<HomeViewProps> = ({ fields }) => (
                         navigation={true}
                         modules={[EffectCoverflow, Navigation]}
                     >
-                        <SwiperSlide className="rounded-lg bg-white">
-                            <div className="px-4 py-4 flex flex-col items-center justify-between h-[19rem]">
-                                <div className="flex flex-col items-center gap-4">
-                                    <div className="relative w-fit">
-                                        <div className="w-24 h-24 rounded-full overflow-hidden">
-                                            <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
+                        {employees && employees.map((employee) => (
+                            <SwiperSlide className="rounded-lg bg-white" key={employee.id}>
+                                <div className="px-4 py-4 flex flex-col items-center justify-between h-[19rem]">
+                                    <div className="flex flex-col items-center gap-4">
+                                        <div className="relative w-fit">
+                                            <div className="w-24 h-24 rounded-full overflow-hidden">
+                                                <img src={employee.profileImage} alt="Profile Image" />
+                                            </div>
+                                            <div className="w-8 h-8 absolute bottom-0 right-0">
+                                                <img src={employee.countryFlag} alt="Flag" className="rounded-sm" />
+                                            </div>
                                         </div>
-                                        <div className="w-8 h-8 absolute bottom-0 right-0">
-                                            <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                        <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap items-center justify-center gap-2">
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="rounded-lg bg-white">
-                            <div className="px-4 py-4 flex flex-col items-center justify-between h-[19rem]">
-                                <div className="flex flex-col items-center gap-4">
-                                    <div className="relative w-fit">
-                                        <div className="w-24 h-24 rounded-full overflow-hidden">
-                                            <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
-                                        </div>
-                                        <div className="w-8 h-8 absolute bottom-0 right-0">
-                                            <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
+                                        <div className="flex flex-col items-center">
+                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
+                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                        <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
+                                    <div className="flex flex-wrap items-center justify-center gap-2">
+                                        {employee.skills.map((skill) => (
+                                            <div className="px-4 py-2 border border-gray-400 rounded-md" key={skill.id}>
+                                                <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>{skill.name}</p>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <div className="flex flex-wrap items-center justify-center gap-2">
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="rounded-lg bg-white">
-                            <div className="px-4 py-4 flex flex-col items-center justify-between h-[19rem]">
-                                <div className="flex flex-col items-center gap-4">
-                                    <div className="relative w-fit">
-                                        <div className="w-24 h-24 rounded-full overflow-hidden">
-                                            <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
-                                        </div>
-                                        <div className="w-8 h-8 absolute bottom-0 right-0">
-                                            <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                        <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap items-center justify-center gap-2">
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="rounded-lg bg-white">
-                            <div className="px-4 py-4 flex flex-col items-center justify-between h-[19rem]">
-                                <div className="flex flex-col items-center gap-4">
-                                    <div className="relative w-fit">
-                                        <div className="w-24 h-24 rounded-full overflow-hidden">
-                                            <img src="/images/profile-sample1.jpeg" alt="Profile Image" />
-                                        </div>
-                                        <div className="w-8 h-8 absolute bottom-0 right-0">
-                                            <img src="/images/india-flag.png" alt="Flag" className="rounded-sm" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-gray-950" style={{ fontWeight: 600 }}>Abhishek Gupta</p>
-                                        <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>마케팅 <span style={{ fontWeight: 600 }}>· 2y+</span></p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap items-center justify-center gap-2">
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>마케팅 콘텐츠 제작</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>인스타그램 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>트위터 관리</p>
-                                    </div>
-                                    <div className="px-4 py-2 border border-gray-400 rounded-md">
-                                        <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>블로그 글 작성</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>
@@ -383,7 +182,7 @@ const HomeView: FC<HomeViewProps> = ({ fields }) => (
                             <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }} key={field.id}>
                                 <div className="px-3 py-2 flex items-center gap-4">
                                     <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                    {IconComponent ? <IconComponent className="text-lg" /> : null}
+                                        {IconComponent ? <IconComponent className="text-lg" /> : null}
                                     </div>
                                     <p className="text-sm" style={{ fontWeight: 500 }}>{field.title}</p>
                                 </div>
