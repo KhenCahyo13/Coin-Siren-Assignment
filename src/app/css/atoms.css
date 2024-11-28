@@ -1,0 +1,18 @@
+/* Badges */
+.badge {
+    @apply rounded-md px-3 py-2 flex items-center gap-3;
+}
+
+/* Badges Theme */
+.badge.badge-white {
+    @apply bg-white bg-opacity-20 ;
+}
+
+.badge .badge-icon {
+    @apply bg-white bg-opacity-50 rounded-md px-3 py-3;
+}
+
+.badge .badge-title {
+    font-weight: 500;
+    @apply text-sm;
+}

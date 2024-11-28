@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { HomeViewProps } from "./Home.type";
 import { IconType } from "react-icons";
+import BadgeIcon from "@/app/components/Badge/BadgeIcon";
 
 const iconsMap: Record<string, IconType> = {
     FaComputer: FaComputer,
@@ -173,19 +174,17 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
             <div className="hidden lg:block lg:mt-6">
                 <Swiper
                     slidesPerView={6}
-                    spaceBetween={30}
+                    spaceBetween={16}
                     modules={[]}
                 >
                     {fields && fields.map((field) => {
                         const IconComponent = iconsMap[field.icon];
                         return (
-                            <SwiperSlide className="bg-white bg-opacity-20 rounded-md" style={{ opacity: 1 }} key={field.id}>
-                                <div className="px-3 py-2 flex items-center gap-4">
-                                    <div className="bg-white bg-opacity-50 rounded-md px-3 py-3">
-                                        {IconComponent ? <IconComponent className="text-lg" /> : null}
-                                    </div>
-                                    <p className="text-sm" style={{ fontWeight: 500 }}>{field.title}</p>
-                                </div>
+                            <SwiperSlide style={{ opacity: 1 }} key={field.id}>
+                                <BadgeIcon
+                                    icon={IconComponent}
+                                    title={field.title}
+                                />
                             </SwiperSlide>
                         )
                     })}
