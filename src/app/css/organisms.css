@@ -27,6 +27,14 @@
     @apply text-sm;
 }
 
+.navbar .navbar-body .navbar-items .relative .absolute {
+    z-index: 50;
+}
+
+.navbar .navbar-body .navbar-items .relative .absolute a {
+    transition: red 0.2s ease-in-out;
+}
+
 /* Footer */
 .footer {
     @apply px-4 py-8 h-fit bg-[#FBFBFB] md:px-12 lg:px-24;
