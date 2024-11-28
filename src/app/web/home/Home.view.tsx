@@ -60,46 +60,48 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                                     onMouseEnter={handleOnMouseEnterEmployeeCard}
                                     onMouseLeave={handleOnMouseLeaveEmployeeCard}
                                 >
-                                    <Card
-                                        height={21}
-                                        renderBody={() => (
-                                            <Fragment>
-                                                <div className="flex flex-col items-center gap-4">
-                                                    <div className="card-profile">
-                                                        <div className="card-profile-img">
-                                                            <img src={employee.profileImage} alt="Profile Image" />
+                                    <div className="animate__animated animate__fadeIn duration-500">
+                                        <Card
+                                            height={21}
+                                            renderBody={() => (
+                                                <Fragment>
+                                                    <div className="flex flex-col items-center gap-4">
+                                                        <div className="card-profile">
+                                                            <div className="card-profile-img">
+                                                                <img src={employee.profileImage} alt="Profile Image" />
+                                                            </div>
+                                                            <div className="card-profile-country">
+                                                                <img src={employee.countryFlag} alt="Flag" className="rounded-sm" />
+                                                            </div>
                                                         </div>
-                                                        <div className="card-profile-country">
-                                                            <img src={employee.countryFlag} alt="Flag" className="rounded-sm" />
+                                                        <div className="card-profile-info">
+                                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
+                                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
                                                         </div>
                                                     </div>
-                                                    <div className="card-profile-info">
-                                                        <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
-                                                        <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
+                                                    <div className="mt-5 card-profile-skills">
+                                                        {employee.skills.map((skill) => (
+                                                            <BadgeOutline
+                                                                key={skill.id}
+                                                                title={skill.name}
+                                                                type="Secondary"
+                                                            />
+                                                        ))}
                                                     </div>
-                                                </div>
-                                                <div className="mt-5 card-profile-skills">
-                                                    {employee.skills.map((skill) => (
-                                                        <BadgeOutline
-                                                            key={skill.id}
-                                                            title={skill.name}
-                                                            type="Secondary"
-                                                        />
-                                                    ))}
-                                                </div>
-                                            </Fragment>
+                                                </Fragment>
+                                            )}
+                                        />
+                                        {tooltipPosition && (
+                                            <Tooltip position={tooltipPosition}>
+                                                <Chatbox
+                                                    title={`월 ${employee.salary}만원`}
+                                                    type="Success"
+                                                    centered={true}
+                                                    icon={<FaDollarSign className="text-green-500" />}
+                                                />
+                                            </Tooltip>
                                         )}
-                                    />
-                                    {tooltipPosition && (
-                                        <Tooltip position={tooltipPosition}>
-                                            <Chatbox
-                                                title={`월 ${employee.salary}만원`}
-                                                type="Success"
-                                                centered={true}
-                                                icon={<FaDollarSign className="text-green-500" />}
-                                            />
-                                        </Tooltip>
-                                    )}
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
