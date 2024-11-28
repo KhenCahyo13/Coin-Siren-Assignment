@@ -26,3 +26,55 @@
 .navbar .navbar-body .navbar-items .navbar-item {
     @apply text-sm;
 }
+
+/* Footer */
+.footer {
+    @apply px-4 py-8 h-fit bg-[#FBFBFB] md:px-12 lg:px-24;
+}
+
+.footer .footer-body {
+    @apply grid grid-cols-1 gap-y-6 lg:grid-cols-2;
+}
+/* Footer Office Info */
+.footer .footer-body .footer-office {
+    @apply flex flex-col gap-6;
+}
+
+.footer .footer-body .footer-office .footer-office-info {
+    @apply flex flex-col gap-4;
+}
+
+.footer .footer-body .footer-office .footer-office-info .footer-office-info-brand-img {
+    @apply w-32 lg:w-36;
+}
+
+.footer .footer-body .footer-office .footer-office-info .footer-office-info-desc {
+    @apply text-gray-950 text-sm
+}
+.footer .footer-body .footer-services {
+    @apply grid grid-cols-2 gap-2 lg:grid-cols-4 lg:col-start-4;
+}
+
+.footer .footer-menus {
+    @apply grid grid-cols-1 gap-y-8 lg:grid-cols-4;
+}
+
+.footer .footer-menus .footer-menu {
+    @apply flex flex-col gap-2;
+}
+
+.footer .footer-menus .footer-menu .footer-menu-title {
+    @apply text-sm text-gray-950 font-semibold;
+}
+
+.footer .footer-menus .footer-menu .footer-menu-subtitle-md {
+    @apply text-sm text-gray-950 font-medium;
+}
+
+.footer .footer-menus .footer-menu .footer-menu-subtitle-bd {
+    @apply text-sm text-gray-950 font-bold;
+}
+
+.footer .footer-copyright {
+    @apply text-sm text-gray-950;
+}

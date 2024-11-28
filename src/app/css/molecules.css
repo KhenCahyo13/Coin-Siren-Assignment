@@ -22,3 +22,32 @@
 .button.button-fit {
     @apply w-fit;
 }
+
+/* Cards */
+.card {
+    @apply px-4 py-4 rounded-md shadow-sm;
+}
+
+.card.card-white {
+    @apply bg-white;
+}
+
+.card .card-body {
+    @apply flex flex-col justify-between h-full;
+}
+
+.card .card-body .card-icon {
+    @apply px-2 py-2 w-fit bg-[#EFF1F6] rounded-md;
+}
+
+.card .card-body .card-title {
+    @apply text-sm text-gray-950;
+}
+
+.card .card-body .card-action {
+    @apply flex items-center gap-2;
+}
+
+.card .card-body .card-action .card-action-button {
+    @apply px-2 py-2 w-fit border border-gray-950 rounded-md
+}
