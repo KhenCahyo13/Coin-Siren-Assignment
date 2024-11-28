@@ -6,7 +6,7 @@ import Image from 'next/image';
 const NavbarView: FC<NavbarViewProps> = ({ openNavbar, openDropdown, handleToggleDropdown, handleToggleNavbar }) => (
   <nav className="navbar">
     <div className="navbar-body">
-      <Image src="/images/logo-white.png" alt="Nav Logo" className="navbar-brand-img" width={500} height={500} />
+      <Image src="/images/logo-white.png" alt="Nav Logo" className="navbar-brand-img" />
       <button className="navbar-button" onClick={handleToggleNavbar}>
         {openNavbar ? <FaXmark /> : <FaAlignRight />}
       </button>

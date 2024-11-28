@@ -8,13 +8,7 @@ const FooterView: FC = () => (
     <div className="footer-body">
       <div className="footer-office">
         <div className="footer-office-info">
-          <Image
-            src="/images/logo-original.png"
-            alt="Nav Logo"
-            className="footer-office-info-brand-img"
-            width={500}
-            height={500}
-          />
+          <Image src="/images/logo-original.png" alt="Nav Logo" className="footer-office-info-brand-img" />
           <p className="footer-office-info-desc font-semibold">
             우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.
           </p>
