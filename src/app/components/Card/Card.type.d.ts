@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-export interface CardProps  {
-    height: number;
-    renderBody: () => ReactNode;
+export interface CardProps {
+  height: number;
+  renderBody: () => ReactNode;
 }

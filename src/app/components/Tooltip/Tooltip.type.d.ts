@@ -1,9 +1,9 @@
 export interface TooltipPosition {
-    top: number;
-    left: number;
+  top: number;
+  left: number;
 }
 
 export interface TooltipProps {
-    children: React.ReactNode;
-    position: TooltipPosition;
+  children: React.ReactNode;
+  position: TooltipPosition;
 }

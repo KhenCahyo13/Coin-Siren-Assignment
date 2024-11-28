@@ -1,4 +1,4 @@
 export interface Benefit {
-    id: number;
-    title: string;
+  id: number;
+  title: string;
 }

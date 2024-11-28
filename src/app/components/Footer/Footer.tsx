@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { FC } from "react";
-import FooterView from "./Footer.view";
+import { FC } from 'react';
+import FooterView from './Footer.view';
 
 const Footer: FC = () => {
-    return <FooterView />;
+  return <FooterView />;
 };
 
 export default Footer;

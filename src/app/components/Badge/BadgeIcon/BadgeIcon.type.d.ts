@@ -1,6 +1,6 @@
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons';
 
 export interface BadgeIconProps {
-    icon: IconType;
-    title: string;
+  icon: IconType;
+  title: string;
 }

@@ -1,73 +1,73 @@
 /* Buttons */
 .button {
-    font-weight: 500;
-    @apply text-sm rounded-md;
+  font-weight: 500;
+  @apply text-sm rounded-md;
 }
 
 /* Buttons Theme */
 .button.button-light {
-    @apply bg-white text-blue-500;
+  @apply bg-white text-blue-500;
 }
 
 /* Buttons Size */
 .button.button-sm {
-    @apply px-4 py-1;
+  @apply px-4 py-1;
 }
 
 /* Buttons Width */
 .button.button-full {
-    @apply w-full;
+  @apply w-full;
 }
 
 .button.button-fit {
-    @apply w-fit;
+  @apply w-fit;
 }
 
 /* Cards */
 .card {
-    @apply px-4 py-4 rounded-md shadow-sm;
+  @apply px-4 py-4 rounded-md shadow-sm;
 }
 /* Cards Themes */
 .card.card-white {
-    @apply bg-white;
+  @apply bg-white;
 }
 
 .card .card-body {
-    @apply flex flex-col justify-between h-full;
+  @apply flex flex-col justify-between h-full;
 }
 
 .card .card-body .card-icon {
-    @apply px-2 py-2 w-fit bg-[#EFF1F6] rounded-md;
+  @apply px-2 py-2 w-fit bg-[#EFF1F6] rounded-md;
 }
 
 .card .card-body .card-title {
-    @apply text-sm text-gray-950;
+  @apply text-sm text-gray-950;
 }
 
 .card .card-body .card-action {
-    @apply flex items-center gap-2;
+  @apply flex items-center gap-2;
 }
 
 .card .card-body .card-action .card-action-button {
-    @apply px-2 py-2 w-fit border border-gray-950 rounded-md
+  @apply px-2 py-2 w-fit border border-gray-950 rounded-md;
 }
 
 .card .card-body .card-profile {
-    @apply relative w-fit;
+  @apply relative w-fit;
 }
 
 .card .card-body .card-profile .card-profile-img {
-    @apply w-24 h-24 rounded-full overflow-hidden;
+  @apply w-24 h-24 rounded-full overflow-hidden;
 }
 
 .card .card-body .card-profile .card-profile-country {
-    @apply w-8 h-8 absolute bottom-0 right-0;
+  @apply w-8 h-8 absolute bottom-0 right-0;
 }
 
 .card .card-body .card-profile-info {
-    @apply flex flex-col items-center;
+  @apply flex flex-col items-center;
 }
 
 .card .card-body .card-profile-skills {
-    @apply flex flex-wrap items-center justify-center gap-2
+  @apply flex flex-wrap items-center justify-center gap-2;
 }

@@ -1,3 +1,3 @@
 export interface PortalProps {
-    children: ReactNode
+  children: ReactNode;
 }

@@ -1,4 +1,4 @@
-import { memo } from "react";
-import BadgeIcon from "./BadgeIcon";
+import { memo } from 'react';
+import BadgeIcon from './BadgeIcon';
 
 export default memo(BadgeIcon);

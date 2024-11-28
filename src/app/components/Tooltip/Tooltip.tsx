@@ -1,13 +1,9 @@
-import { FC, memo } from "react";
-import ReactDOM from "react-dom";
-import TooltipView from "./Tooltip.view";
-import { TooltipProps } from "./Tooltip.type";
+import { FC, memo } from 'react';
+import TooltipView from './Tooltip.view';
+import { TooltipProps } from './Tooltip.type';
 
 const Tooltip: FC<TooltipProps> = ({ children, position }) => {
-    return <TooltipView
-        children={children}
-        position={position}
-    />
+  return <TooltipView position={position}>{children}</TooltipView>;
 };
 
 export default memo(Tooltip);
