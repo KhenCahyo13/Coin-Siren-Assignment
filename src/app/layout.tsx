@@ -14,6 +14,8 @@ import './css/molecules.css';
 import './css/organisms.css';
 import './css/pages.css';
 import './css/templates.css';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -46,7 +48,12 @@ export default function RootLayout({
 			<body
 				className={`${poppins.className} antialiased bg-gradient-to-r from-[#26C2B9] to-[#288BE7]`}
 			>
+				{/* Navbar */}
+				<Navbar />
+				{/* Content */}
 				{children}
+				{/* Footer */}
+				<Footer />
 			</body>
 		</html>
 	);

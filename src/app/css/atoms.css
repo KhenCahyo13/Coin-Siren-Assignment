@@ -46,3 +46,37 @@
 .badge-outline-info p {
     @apply text-blue-900;
 }
+
+/* Chatboxs */
+.chatbox {
+    @apply relative px-2 py-2 w-fit rounded-md lg:px-3;
+}
+
+.chatbox.chatbox-white {
+    @apply bg-white;
+}
+
+.chatbox.chatbox-primary {
+    @apply bg-[#8BC4FF];
+}
+
+.chatbox.chatbox.chatbox-primary p, .chatbox.chatbox.chatbox-white p {
+    font-weight: 600;
+    @apply text-sm lg:text-base;
+}
+
+.chatbox.chatbox-white p {
+    @apply text-[#40E2E8];
+}
+
+.chatbox .chatbox-triangle {
+    @apply absolute bottom-[-8px] left-2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-transparent;
+}
+
+.chatbox.chatbox-white .chatbox-triangle {
+    @apply border-t-white;
+}
+
+.chatbox.chatbox-primary .chatbox-triangle {
+    @apply border-t-[#8BC4FF];
+}

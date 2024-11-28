@@ -9,6 +9,7 @@ import { IconType } from "react-icons";
 import BadgeIcon from "@/app/components/Badge/BadgeIcon";
 import Card from "@/app/components/Card";
 import BadgeOutline from "@/app/components/Badge/BadgeOutline";
+import Chatbox from "@/app/components/Chatbox";
 
 const iconsMap: Record<string, IconType> = {
     FaComputer: FaComputer,
@@ -18,18 +19,16 @@ const iconsMap: Record<string, IconType> = {
 
 const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
     <Fragment>
-        {/* Navbar */}
-        <Navbar />
         {/* Hero */}
-        <main className="px-4 py-8 h-fit md:px-12 lg:px-24 lg:pb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:items-center">
+        <main className="page-container">
+            <div className="hero">
                 {/* Left Content */}
                 <div className="flex flex-col">
                     <div className="flex flex-col gap-4 lg:gap-6">
-                        <div className="relative px-2 py-2 w-fit rounded-md bg-[#8BC4FF] lg:px-3 lg:bg-white">
-                            <p className="text-sm lg:text-[#40E2E8] lg:text-base" style={{ fontWeight: 600 }}>풀타임, 파트타임</p>
-                            <div className="absolute bottom-[-8px] left-2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-transparent border-t-[#8BC4FF] lg:border-t-white" />
-                        </div>
+                        <Chatbox
+                            title="풀타임, 파트타임"
+                            type="White"
+                        />
                         <div className="flex flex-col gap-1 lg:gap-3">
                             <h1 className="text-4xl leading-tight lg:text-5xl lg:leading-tight" style={{ fontWeight: 700 }}>최고의 실력을 가진 외국인 인재를 찾고 계신가요?</h1>
                             <p style={{ fontWeight: 600 }} className="lg:text-xl">법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.</p>
@@ -207,8 +206,6 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
                 </Swiper>
             </div>
         </main>
-        {/* Footer */}
-        <Footer />
     </Fragment>
 );
 
