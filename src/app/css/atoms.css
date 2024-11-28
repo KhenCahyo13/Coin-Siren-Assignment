@@ -80,3 +80,10 @@
 .chatbox.chatbox-primary .chatbox-triangle {
     @apply border-t-[#8BC4FF];
 }
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    z-index: 9999;
+}

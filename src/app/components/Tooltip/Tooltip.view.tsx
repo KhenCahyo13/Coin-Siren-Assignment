@@ -5,12 +5,10 @@ import { createPortal } from "react-dom";
 const TooltipView: FC<TooltipProps> = ({ children, position }) => {
     return createPortal(
         <div
+            className="tooltip"
             style={{
-                position: "absolute",
-                top: position.top,
+                top: position.top - 8,
                 left: position.left,
-                transform: "translate(-50%, -100%)",
-                zIndex: 9999,
             }}
         >
             {children}
