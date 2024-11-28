@@ -1,6 +1,6 @@
 /* Badges */
 .badge {
-    @apply rounded-md px-3 py-2 flex items-center gap-3;
+    @apply rounded-md px-4 py-2 flex items-center gap-3;
 }
 
 /* Badges Theme */
@@ -15,4 +15,34 @@
 .badge .badge-title {
     font-weight: 500;
     @apply text-sm;
+}
+
+/* Badge Outline Themes */
+.badge-outline-secondary {
+    @apply border border-gray-400;
+}
+
+.badge-outline-success {
+    @apply border border-gray-500;
+}
+
+.badge-outline-info {
+    @apply border border-blue-500;
+}
+
+.badge-outline-secondary p, .badge-outline-success p, .badge-outline-info p {
+    font-weight: 500;
+    @apply text-sm;
+}
+
+.badge-outline-secondary p {
+    @apply text-gray-950;
+}
+
+.badge-outline-success p {
+    @apply text-green-900;
+}
+
+.badge-outline-info p {
+    @apply text-blue-900;
 }

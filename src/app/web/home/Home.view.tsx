@@ -7,6 +7,8 @@ import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { HomeViewProps } from "./Home.type";
 import { IconType } from "react-icons";
 import BadgeIcon from "@/app/components/Badge/BadgeIcon";
+import Card from "@/app/components/Card";
+import BadgeOutline from "@/app/components/Badge/BadgeOutline";
 
 const iconsMap: Record<string, IconType> = {
     FaComputer: FaComputer,
@@ -141,30 +143,37 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
                         modules={[EffectCoverflow, Navigation]}
                     >
                         {employees && employees.map((employee) => (
-                            <SwiperSlide className="rounded-lg bg-white" key={employee.id}>
-                                <div className="px-4 py-4 flex flex-col items-center justify-between h-[19rem]">
-                                    <div className="flex flex-col items-center gap-4">
-                                        <div className="relative w-fit">
-                                            <div className="w-24 h-24 rounded-full overflow-hidden">
-                                                <img src={employee.profileImage} alt="Profile Image" />
+                            <SwiperSlide key={employee.id}>
+                                <Card
+                                    height={20}
+                                    renderBody={() => (
+                                        <Fragment>
+                                            <div className="flex flex-col items-center gap-4">
+                                                <div className="card-profile">
+                                                    <div className="card-profile-img">
+                                                        <img src={employee.profileImage} alt="Profile Image" />
+                                                    </div>
+                                                    <div className="card-profile-country">
+                                                        <img src={employee.countryFlag} alt="Flag" className="rounded-sm" />
+                                                    </div>
+                                                </div>
+                                                <div className="card-profile-info">
+                                                    <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
+                                                    <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
+                                                </div>
                                             </div>
-                                            <div className="w-8 h-8 absolute bottom-0 right-0">
-                                                <img src={employee.countryFlag} alt="Flag" className="rounded-sm" />
+                                            <div className="mt-5 card-profile-skills">
+                                                {employee.skills.map((skill) => (
+                                                    <BadgeOutline
+                                                        key={skill.id}
+                                                        title={skill.name}
+                                                        type="Secondary"
+                                                    />
+                                                ))}
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col items-center">
-                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
-                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-wrap items-center justify-center gap-2">
-                                        {employee.skills.map((skill) => (
-                                            <div className="px-4 py-2 border border-gray-400 rounded-md" key={skill.id}>
-                                                <p className="text-sm text-gray-950" style={{ fontWeight: 500 }}>{skill.name}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                        </Fragment>
+                                    )}
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
