@@ -1,0 +1,24 @@
+/* Buttons */
+.button {
+    font-weight: 500;
+    @apply text-sm rounded-md;
+}
+
+/* Buttons Theme */
+.button.button-light {
+    @apply bg-white text-blue-500;
+}
+
+/* Buttons Size */
+.button.button-sm {
+    @apply px-4 py-1;
+}
+
+/* Buttons Width */
+.button.button-full {
+    @apply w-full;
+}
+
+.button.button-fit {
+    @apply w-fit;
+}

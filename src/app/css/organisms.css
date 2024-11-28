@@ -1,0 +1,28 @@
+/* Navbar */
+.navbar {
+    @apply px-4 py-3 md:px-12 md:py-4 lg:px-24 lg:py-6;
+}
+
+.navbar .navbar-body {
+    @apply flex flex-wrap items-center justify-between lg:flex-none;
+}
+
+.navbar .navbar-body .navbar-brand-img {
+    @apply w-28 lg:w-32;
+}
+
+.navbar .navbar-body .navbar-button {
+    @apply block lg:hidden;
+}
+
+.navbar .navbar-body .navbar-button i {
+    @apply text-lg;
+}
+
+.navbar .navbar-body .navbar-items {
+    @apply w-full flex-col items-center gap-4 mt-4 lg:flex lg:w-fit lg:mt-0 lg:flex-row lg:gap-12;
+}
+
+.navbar .navbar-body .navbar-items .navbar-item {
+    @apply text-sm;
+}

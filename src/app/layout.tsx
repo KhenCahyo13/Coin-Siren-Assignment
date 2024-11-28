@@ -8,6 +8,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
+// Include Atomic CSS files
+import './css/atoms.css';
+import './css/molecules.css';
+import './css/organisms.css';
+import './css/pages.css';
+import './css/templates.css';
+
 const poppins = Poppins({
 	subsets: ["latin"],
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
