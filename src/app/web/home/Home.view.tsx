@@ -1,5 +1,3 @@
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
 import { FC, Fragment, memo } from "react";
 import { FaCheck, FaComputer, FaImage, FaPhone } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +8,7 @@ import BadgeIcon from "@/app/components/Badge/BadgeIcon";
 import Card from "@/app/components/Card";
 import BadgeOutline from "@/app/components/Badge/BadgeOutline";
 import Chatbox from "@/app/components/Chatbox";
+import Tooltip from "@/app/components/Tooltip";
 
 const iconsMap: Record<string, IconType> = {
     FaComputer: FaComputer,
@@ -17,7 +16,7 @@ const iconsMap: Record<string, IconType> = {
     FaPhone: FaPhone
 };
 
-const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
+const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handleOnMouseEnter, handleOnMouseLeave }) => (
     <Fragment>
         {/* Hero */}
         <main className="page-container">
@@ -149,7 +148,12 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
                         modules={[EffectCoverflow, Navigation]}
                     >
                         {employees && employees.map((employee) => (
-                            <SwiperSlide key={employee.id}>
+                            <SwiperSlide
+                                key={employee.id}
+                                className="relative group"
+                                onMouseEnter={handleOnMouseEnter}
+                                onMouseLeave={handleOnMouseLeave}
+                            >
                                 <Card
                                     height={20}
                                     renderBody={() => (
@@ -180,6 +184,14 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees }) => (
                                         </Fragment>
                                     )}
                                 />
+                                {tooltipPosition && (
+                                    <Tooltip position={tooltipPosition}>
+                                        <Chatbox
+                                            title="Chat with me"
+                                            type="Primary"
+                                        />
+                                    </Tooltip>
+                                )}
                             </SwiperSlide>
                         ))}
                     </Swiper>

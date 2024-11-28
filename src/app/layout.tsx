@@ -52,6 +52,8 @@ export default function RootLayout({
 				<Navbar />
 				{/* Content */}
 				{children}
+				{/* Portal */}
+				<div id="portal-root"></div>
 				{/* Footer */}
 				<Footer />
 			</body>

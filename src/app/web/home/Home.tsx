@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, use, useEffect, useState } from "react";
+import { FC, MouseEvent, useCallback, useEffect, useState } from "react";
 import HomeView from "./Home.view";
 import { Field } from "@/app/types/field";
 import axios from "axios";
@@ -9,6 +9,19 @@ import { Employee } from "@/app/types/employee";
 const Home: FC = () => {
     const [fieldsData, setFieldsData] = useState<Field[] | null>(null);
     const [employeesData, setEmployeesData] = useState<Employee[] | null>(null);
+    const [tooltipPosition, setTooltipPosition] = useState<{ top: number; left: number } | null>(null);
+
+    const handleOnMouseEnter = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        setTooltipPosition({
+            top: rect.top + window.scrollY - 10, // Pastikan tooltip berada di atas
+            left: rect.left + rect.width / 2,
+        });
+    }, []);
+
+    const handleOnMouseLeave = useCallback(() => {
+        setTooltipPosition(null);
+    }, []);
 
     useEffect(() => {
         const fetchFields = async () => {
@@ -32,6 +45,9 @@ const Home: FC = () => {
     return <HomeView
         fields={fieldsData}
         employees={employeesData}
+        tooltipPosition={tooltipPosition}
+        handleOnMouseEnter={handleOnMouseEnter}
+        handleOnMouseLeave={handleOnMouseLeave}
     />;
 };
 
