@@ -16,7 +16,7 @@ const iconsMap: Record<string, IconType> = {
     FaPhone: FaPhone
 };
 
-const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handleOnMouseEnterEmployeeCard, handleOnMouseLeaveEmployeeCard }) => (
+const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, tooltipPosition, handleOnMouseEnterEmployeeCard, handleOnMouseLeaveEmployeeCard }) => (
     <Fragment>
         {/* Hero */}
         <main className="page-container">
@@ -135,20 +135,16 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                         </div>
                     </div>
                     <p className="text-sm text-[#FBFF23] underline mt-4 lg:text-white lg:text-lg" style={{ fontWeight: 600 }}>개발자가 필요하신가요?</p>
-                    <div className="hidden mt-6 items-center gap-4 lg:flex animate__animated animate__fadeIn duration-500">
-                        <div className="py-2 flex flex-col gap-4 border-t">
-                            <p style={{ fontWeight: 600 }}>평균 월 120만원</p>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>임금을 해당 국가를 기준으로 계산합니다.</p>
+                    {achievements && (
+                        <div className="hidden mt-6 items-center gap-4 lg:flex animate__animated animate__fadeIn duration-500">
+                            {achievements.map((achievement) => (
+                                <div className="py-2 flex flex-col gap-4 border-t" key={achievement.id}>
+                                    <p style={{ fontWeight: 600 }}>{achievement.title}</p>
+                                    <p className="text-sm" style={{ fontWeight: 500 }}>{achievement.subtitle}</p>
+                                </div>
+                            ))}
                         </div>
-                        <div className="py-2 flex flex-col gap-4 border-t">
-                            <p style={{ fontWeight: 600 }}>최대 3회 인력교체</p>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>막상 채용해보니 맞지 않아도 걱정하지 마세요. </p>
-                        </div>
-                        <div className="py-2 flex flex-col gap-4 border-t">
-                            <p style={{ fontWeight: 600 }}>평균 3일, 최대 10일</p>
-                            <p className="text-sm" style={{ fontWeight: 500 }}>급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다.</p>
-                        </div>
-                    </div>
+                    )}
                 </div>
                 {/* Right Content */}
                 <div className="hidden lg:block">

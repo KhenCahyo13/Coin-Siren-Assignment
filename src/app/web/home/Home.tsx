@@ -5,10 +5,12 @@ import HomeView from "./Home.view";
 import { Field } from "@/app/types/field";
 import axios from "axios";
 import { Employee } from "@/app/types/employee";
+import { Achievement } from "@/app/types/achievement";
 
 const Home: FC = () => {
     const [fieldsData, setFieldsData] = useState<Field[] | null>(null);
     const [employeesData, setEmployeesData] = useState<Employee[] | null>(null);
+    const [achievementsData, setAchievementsData] = useState<Achievement[] | null>(null);
     const [tooltipPosition, setTooltipPosition] = useState<{ top: number; left: number } | null>(null);
 
     const handleOnMouseEnterEmployeeCard = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -38,13 +40,22 @@ const Home: FC = () => {
             }
         };
 
+        const fetchAchievements = async () => {
+            const response = await axios.get('/api/achievements');
+            if (response.data.success) {
+                setAchievementsData(response.data.data);
+            }
+        };
+
         fetchEmployees();
         fetchFields();
+        fetchAchievements();
     }, []);
 
     return <HomeView
         fields={fieldsData}
         employees={employeesData}
+        achievements={achievementsData}
         tooltipPosition={tooltipPosition}
         handleOnMouseEnterEmployeeCard={handleOnMouseEnterEmployeeCard}
         handleOnMouseLeaveEmployeeCard={handleOnMouseLeaveEmployeeCard}
