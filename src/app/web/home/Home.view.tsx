@@ -50,7 +50,12 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                             modules={[EffectCoverflow, Navigation]}
                         >
                             {employees && employees.map((employee) => (
-                                <SwiperSlide key={employee.id}>
+                                <SwiperSlide
+                                    key={employee.id}
+                                    className="relative group"
+                                    onMouseEnter={handleOnMouseEnter}
+                                    onMouseLeave={handleOnMouseLeave}
+                                >
                                     <Card
                                         height={21}
                                         renderBody={() => (
@@ -81,6 +86,16 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                                             </Fragment>
                                         )}
                                     />
+                                    {tooltipPosition && (
+                                        <Tooltip position={tooltipPosition}>
+                                            <Chatbox
+                                                title={`월 ${employee.salary}만원`}
+                                                type="Success"
+                                                centered={true}
+                                                icon={<FaDollarSign className="text-green-500" />}
+                                            />
+                                        </Tooltip>
+                                    )}
                                 </SwiperSlide>
                             ))}
                         </Swiper>
