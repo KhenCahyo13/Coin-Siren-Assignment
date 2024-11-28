@@ -1,5 +1,5 @@
 import { FC, Fragment, memo } from "react";
-import { FaCheck, FaComputer, FaImage, FaPhone } from "react-icons/fa6";
+import { FaCheck, FaComputer, FaDollarSign, FaImage, FaPhone } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { HomeViewProps } from "./Home.type";
@@ -188,7 +188,9 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                                     <Tooltip position={tooltipPosition}>
                                         <Chatbox
                                             title="Chat with me"
-                                            type="Primary"
+                                            type="Success"
+                                            centered={true}
+                                            icon={<FaDollarSign className="text-green-500" />}
                                         />
                                     </Tooltip>
                                 )}

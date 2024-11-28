@@ -52,6 +52,18 @@
     @apply relative px-2 py-2 w-fit rounded-md lg:px-3;
 }
 
+.chatbox .chatbox-body {
+    @apply flex items-center gap-2;
+}
+
+.chatbox .chatbox-body .chatbox-icon-success {
+    @apply w-6 h-6 rounded-full bg-green-300 flex items-center justify-center;
+}
+
+.chatbox .chatbox-body .chatbox-icon-primary {
+    @apply w-6 h-6 rounded-full bg-blue-300 flex items-center justify-center;
+}
+
 .chatbox.chatbox-white {
     @apply bg-white;
 }
@@ -60,25 +72,42 @@
     @apply bg-[#8BC4FF];
 }
 
-.chatbox.chatbox.chatbox-primary p, .chatbox.chatbox.chatbox-white p {
+.chatbox.chatbox-success {
+    @apply bg-green-100;
+}
+
+.chatbox.chatbox.chatbox-primary p, .chatbox.chatbox.chatbox-white p, .chatbox.chatbox.chatbox-success p {
     font-weight: 600;
-    @apply text-sm lg:text-base;
+    @apply text-sm;
 }
 
 .chatbox.chatbox-white p {
     @apply text-[#40E2E8];
 }
 
+.chatbox.chatbox-success p {
+    @apply text-green-500;
+}
+
 .chatbox .chatbox-triangle {
     @apply absolute bottom-[-8px] left-2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-transparent;
 }
 
-.chatbox.chatbox-white .chatbox-triangle {
+.chatbox .chatbox-triangle-center {
+    @apply absolute bottom-[-8px] left-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-transparent;
+    transform: translateX(-50%);
+}
+
+.chatbox.chatbox-white .chatbox-triangle, .chatbox.chatbox-white .chatbox-triangle-center {
     @apply border-t-white;
 }
 
-.chatbox.chatbox-primary .chatbox-triangle {
+.chatbox.chatbox-primary .chatbox-triangle, .chatbox.chatbox-primary .chatbox-triangle-center {
     @apply border-t-[#8BC4FF];
+}
+
+.chatbox.chatbox-success .chatbox-triangle, .chatbox.chatbox-success .chatbox-triangle-center {
+    @apply border-t-green-100;
 }
 
 /* Tooltip */
