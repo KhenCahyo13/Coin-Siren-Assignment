@@ -34,7 +34,7 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, benefits
                             <h1 className="text-4xl leading-tight font-bold lg:text-5xl lg:leading-tight animate__animated animate__fadeInUp duration-500">
                                 최고의 실력을 가진 외국인 인재를 찾고 계신가요?
                             </h1>
-                            <p style={{ fontWeight: 600 }} className="lg:text-xl animate__animated animate__fadeInUp duration-500">법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.</p>
+                            <p className="lg:text-xl font-semibold animate__animated animate__fadeInUp duration-500">법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.</p>
                         </div>
                     </div>
                     <div className="block mt-5 lg:hidden lg:mt-0">
@@ -75,8 +75,8 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, benefits
                                                             </div>
                                                         </div>
                                                         <div className="card-profile-info">
-                                                            <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
-                                                            <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
+                                                            <p className="text-gray-950 font-semibold">{employee.name}</p>
+                                                            <p className="text-sm text-blue-500 font-medium">{employee.position} <span className="font-semibold">· {employee.lengthOfExperience}y+</span></p>
                                                         </div>
                                                     </div>
                                                     <div className="mt-5 card-profile-skills">
@@ -114,19 +114,19 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, benefits
                                         <div className="px-1 py-1 rounded-md bg-[#E8ECFF]">
                                             <FaCheck className="text-[#2C599B]" />
                                         </div>
-                                        <p className="text-sm" style={{ fontWeight: 600 }}>{benefit.title}</p>
+                                        <p className="text-sm font-semibold">{benefit.title}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>          
                     )}
-                    <p className="text-sm text-[#FBFF23] underline mt-4 lg:text-white lg:text-lg" style={{ fontWeight: 600 }}>개발자가 필요하신가요?</p>
+                    <p className="text-sm text-[#FBFF23] underline mt-4 lg:text-white lg:text-lg font-semibold">개발자가 필요하신가요?</p>
                     {achievements && (
                         <div className="hidden mt-6 items-center gap-4 lg:flex animate__animated animate__fadeIn duration-500">
                             {achievements.map((achievement) => (
                                 <div className="py-2 flex flex-col gap-4 border-t" key={achievement.id}>
-                                    <p style={{ fontWeight: 600 }}>{achievement.title}</p>
-                                    <p className="text-sm" style={{ fontWeight: 500 }}>{achievement.subtitle}</p>
+                                    <p className="font-semibold">{achievement.title}</p>
+                                    <p className="text-sm font-semibold">{achievement.subtitle}</p>
                                 </div>
                             ))}
                         </div>
@@ -172,8 +172,8 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, achievements, benefits
                                                         </div>
                                                     </div>
                                                     <div className="card-profile-info">
-                                                        <p className="text-gray-950" style={{ fontWeight: 600 }}>{employee.name}</p>
-                                                        <p className="text-sm text-blue-500" style={{ fontWeight: 500 }}>{employee.position} <span style={{ fontWeight: 600 }}>· {employee.lengthOfExperience}y+</span></p>
+                                                        <p className="text-gray-950 font-semibold">{employee.name}</p>
+                                                        <p className="text-sm text-blue-500 font-medium">{employee.position} <span className="font-semibold">· {employee.lengthOfExperience}y+</span></p>
                                                     </div>
                                                 </div>
                                                 <div className="mt-5 card-profile-skills">
