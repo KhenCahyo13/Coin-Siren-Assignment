@@ -14,6 +14,10 @@ import './css/molecules.css';
 import './css/organisms.css';
 import './css/pages.css';
 import './css/templates.css';
+
+// Animate CSS files
+import 'animate.css';
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
