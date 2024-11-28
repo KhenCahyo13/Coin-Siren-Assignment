@@ -10,6 +10,7 @@ export const GET = async (): Promise<NextResponse> => {
                 name: 'Abhishek Gupta',
                 position: '마케팅',
                 lengthOfExperience: 2,
+                salary: 70,
                 countryFlag: '/images/india-flag.png',
                 profileImage: '/images/profile-sample1.jpeg',
                 skills: [
@@ -36,6 +37,7 @@ export const GET = async (): Promise<NextResponse> => {
                 name: 'Abhishek Gupta 2',
                 position: '마케팅',
                 lengthOfExperience: 3,
+                salary: 100,
                 countryFlag: '/images/india-flag.png',
                 profileImage: '/images/profile-sample2.png',
                 skills: [
@@ -62,6 +64,7 @@ export const GET = async (): Promise<NextResponse> => {
                 name: 'Abhishek Gupta 3',
                 position: '마케팅',
                 lengthOfExperience: 3,
+                salary: 90,
                 countryFlag: '/images/india-flag.png',
                 profileImage: '/images/profile-sample1.jpeg',
                 skills: [
@@ -88,6 +91,7 @@ export const GET = async (): Promise<NextResponse> => {
                 name: 'Abhishek Gupta 4',
                 position: '마케팅',
                 lengthOfExperience: 2,
+                salary: 80,
                 countryFlag: '/images/india-flag.png',
                 profileImage: '/images/profile-sample2.png',
                 skills: [
@@ -114,6 +118,7 @@ export const GET = async (): Promise<NextResponse> => {
                 name: 'Abhishek Gupta 5',
                 position: '마케팅',
                 lengthOfExperience: 3,
+                salary: 100,
                 countryFlag: '/images/india-flag.png',
                 profileImage: '/images/profile-sample1.jpeg',
                 skills: [

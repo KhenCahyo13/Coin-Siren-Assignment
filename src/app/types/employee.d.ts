@@ -8,6 +8,7 @@ export interface Employee {
     name: string;
     position: string;
     lengthOfExperience: number;
+    salary: number;
     countryFlag: string;
     profileImage: string;
     skills: EmployeeSkill[];

@@ -187,7 +187,7 @@ const HomeView: FC<HomeViewProps> = ({ fields, employees, tooltipPosition, handl
                                 {tooltipPosition && (
                                     <Tooltip position={tooltipPosition}>
                                         <Chatbox
-                                            title="Chat with me"
+                                            title={`월 ${employee.salary}만원`}
                                             type="Success"
                                             centered={true}
                                             icon={<FaDollarSign className="text-green-500" />}
