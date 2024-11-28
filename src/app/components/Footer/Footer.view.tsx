@@ -1,5 +1,6 @@
-import { FC, memo } from "react";
+import { FC, Fragment, memo } from "react";
 import { FaArrowRight, FaCode, FaGear, FaUser } from "react-icons/fa6";
+import Card from "../Card";
 
 const FooterView: FC = () => (
     <footer className="footer">
@@ -16,70 +17,82 @@ const FooterView: FC = () => (
             </div>
             {/* Card Collections */}
             <div className="footer-services">
-                <div className="card h-40 card-white">
-                    <div className="card-body">
-                        <div className="flex flex-col gap-3">
-                            <div className="card-icon">
-                                <FaCode className="text-[#7388A9] text-2xl" />
+                <Card
+                    height={16}
+                    renderBody={() => (
+                        <Fragment>
+                            <div className="flex flex-col gap-3">
+                                <div className="card-icon">
+                                    <FaCode className="text-[#7388A9] text-2xl" />
+                                </div>
+                                <p className="card-title" style={{ fontWeight: 600 }}>해외 개발자 원격 채용</p>
                             </div>
-                            <p className="card-title" style={{ fontWeight: 600 }}>해외 개발자 원격 채용</p>
-                        </div>
-                        <div className="card-action">
-                            <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
-                            <button className="card-action-button">
-                                <FaArrowRight className="text-gray-950 text-xs" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card h-40 card-white">
-                    <div className="card-body">
-                        <div className="flex flex-col gap-3">
-                            <div className="card-icon">
-                                <FaUser className="text-[#7388A9] text-2xl" />
+                            <div className="card-action">
+                                <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
+                                <button className="card-action-button">
+                                    <FaArrowRight className="text-gray-950 text-xs" />
+                                </button>
                             </div>
-                            <p className="card-title" style={{ fontWeight: 600 }}>외국인 원격 채용 <span style={{ fontWeight: 700 }}>(비개발)</span></p>
-                        </div>
-                        <div className="card-action">
-                            <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
-                            <button className="card-action-button">
-                                <FaArrowRight className="text-gray-950 text-xs" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="card-body">
-                        <div className="flex flex-col gap-3">
-                            <div className="card-icon">
-                                <p className="text-[#7388A9] text-sm lg:text-lg" style={{ fontWeight: 700 }}>KOR</p>
+                        </Fragment>
+                    )}
+                />
+                <Card
+                    height={16}
+                    renderBody={() => (
+                        <Fragment>
+                            <div className="flex flex-col gap-3">
+                                <div className="card-icon">
+                                    <FaUser className="text-[#7388A9] text-2xl" />
+                                </div>
+                                <p className="card-title" style={{ fontWeight: 600 }}>외국인 원격 채용 <span style={{ fontWeight: 700 }}>(비개발)</span></p>
                             </div>
-                            <p className="card-title" style={{ fontWeight: 600 }}>한국어 가능 외국인 채용</p>
-                        </div>
-                        <div className="card-action">
-                            <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
-                            <button className="card-action-button">
-                                <FaArrowRight className="text-gray-950 text-xs" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="card-body">
-                        <div className="flex flex-col gap-3">
-                            <div className="card-icon">
-                                <FaGear className="text-[#7388A9] text-2xl" />
+                            <div className="card-action">
+                                <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
+                                <button className="card-action-button">
+                                    <FaArrowRight className="text-gray-950 text-xs" />
+                                </button>
                             </div>
-                            <p className="card-title" style={{ fontWeight: 600 }}>해외 개발자 활용 서비스</p>
-                        </div>
-                        <div className="card-action">
-                            <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
-                            <button className="card-action-button">
-                                <FaArrowRight className="text-gray-950 text-xs" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                        </Fragment>
+                    )}
+                />
+                <Card
+                    height={16}
+                    renderBody={() => (
+                        <Fragment>
+                            <div className="flex flex-col gap-3">
+                                <div className="card-icon">
+                                    <p className="text-[#7388A9] text-sm lg:text-lg" style={{ fontWeight: 700 }}>KOR</p>
+                                </div>
+                                <p className="card-title" style={{ fontWeight: 600 }}>한국어 가능 외국인 채용</p>
+                            </div>
+                            <div className="card-action">
+                                <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
+                                <button className="card-action-button">
+                                    <FaArrowRight className="text-gray-950 text-xs" />
+                                </button>
+                            </div>
+                        </Fragment>
+                    )}
+                />
+                <Card
+                    height={16}
+                    renderBody={() => (
+                        <Fragment>
+                            <div className="flex flex-col gap-3">
+                                <div className="card-icon">
+                                    <FaGear className="text-[#7388A9] text-2xl" />
+                                </div>
+                                <p className="card-title" style={{ fontWeight: 600 }}>해외 개발자 활용 서비스</p>
+                            </div>
+                            <div className="card-action">
+                                <p className="card-title" style={{ fontWeight: 600 }}>바로가기</p>
+                                <button className="card-action-button">
+                                    <FaArrowRight className="text-gray-950 text-xs" />
+                                </button>
+                            </div>
+                        </Fragment>
+                    )}
+                />
             </div>
         </div>
         <div className="footer-menus mt-8 lg:mt-12">
